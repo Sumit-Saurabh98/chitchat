@@ -1,6 +1,6 @@
 <a href="https://youtu.be/sQ1zvdS8eU8">
   <img alt="AI-powered WhatsApp." src="https://i.ibb.co/qMPkchh/demo.png">
-  <h1 align="center">AI Powered WhatsApp Clone</h1>
+  <h1 align="center">Chit Chat</h1>
 </a>
 
 <p align="center">
