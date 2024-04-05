@@ -4,7 +4,7 @@
 </a>
 
 <p align="center">
- A messaging app with a little bit more excitement by integrating GPT and DALL-E-3 
+ A messaging app with Chat GPT and DALL-E-3 
 </p>
 
 <p align="center">
