@@ -1,3 +1,5 @@
+"use client"
+
 import { ListFilter, LogOut, MessageSquareDiff, Search, User } from "lucide-react";
 import { Input } from "../ui/input";
 import ThemeSwitch from "./theme-switch";
