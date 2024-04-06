@@ -4,7 +4,7 @@ import {ConvexError, v} from "convex/values"
 
 export const createConversation = mutation({
     args: {
-        participents: v.array(v.id("users")),
+        participants: v.array(v.id("users")),
         isGroup: v.boolean(),
         groupName: v.optional(v.string()),
         groupImage: v.optional(v.id("_storage")),
@@ -23,8 +23,8 @@ export const createConversation = mutation({
        .query("conversations")
        .filter((q)=> 
        q.or(
-        q.eq(q.field("participents"), args.participents),
-        q.eq(q.field("participents"), args.participents.reverse())
+        q.eq(q.field("participants"), args.participants),
+        q.eq(q.field("participants"), args.participants.reverse())
        )
        )
        .first();
@@ -42,7 +42,7 @@ export const createConversation = mutation({
        }
 
        const conversationId = await ctx.db.insert("conversations", {
-        participents: args.participents,
+        participants: args.participants,
         isGroup: args.isGroup,
         groupName: args.groupName,
         groupImage,
