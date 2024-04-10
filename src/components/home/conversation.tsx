@@ -42,7 +42,6 @@ const Conversation = ({ conversation }: { conversation: any }) => {
 						) : null}
 						{lastMessageType === "image" && <ImageIcon size={16} />}
 						{lastMessageType === "video" && <VideoIcon size={16} />}
-						{lastMessageType === "file" && <ImageIcon size={16} />}
 					</p>
 				</div>
 			</div>
