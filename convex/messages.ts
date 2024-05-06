@@ -1,5 +1,5 @@
 import { ConvexError, v } from "convex/values";
-import { mutation, query} from "./_generated/server";
+import { mutation, query } from "./_generated/server";
 
 export const sendTextMessage = mutation({
 	args: {
@@ -46,9 +46,7 @@ export const sendTextMessage = mutation({
 	},
 });
 
-
-// optimised version
-
+// Optimized
 export const getMessages = query({
 	args: {
 		conversation: v.id("conversations"),
@@ -90,36 +88,35 @@ export const getMessages = query({
 	},
 });
 
-// unoptimised version
+// unoptimized
+
 // export const getMessages = query({
-// 	args: {
+// 	args:{
 // 		conversation: v.id("conversations"),
 // 	},
 // 	handler: async (ctx, args) => {
 // 		const identity = await ctx.auth.getUserIdentity();
 // 		if (!identity) {
-// 			throw new Error("Unauthorized");
+// 			throw new ConvexError("Not authenticated");
 // 		}
 
 // 		const messages = await ctx.db
-// 			.query("messages")
-// 			.withIndex("by_conversation", (q) => q.eq("conversation", args.conversation))
-// 			.collect();
+// 		.query("messages")
+// 		.withIndex("by_conversation", q=> q.eq("conversation", args.conversation))
+// 		.collect();
 
-
+// 		// john => 200 , 1
 // 		const messagesWithSender = await Promise.all(
 // 			messages.map(async (message) => {
-				
-//                 const sender = await ctx.db
-// 						.query("users")
-// 						.filter((q) => q.eq(q.field("_id"), message.sender))
-// 						.first();
+// 				const sender = await ctx.db
+// 				.query("users")
+// 				.filter(q => q.eq(q.field("_id"), message.sender))
+// 				.first();
 
-// 				return { ...message, sender };
+// 				return {...message,sender}
 // 			})
-// 		);
+// 		)
 
 // 		return messagesWithSender;
-// 	},
+// 	}
 // });
-
