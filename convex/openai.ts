@@ -68,3 +68,10 @@ export const dall_e = action({
 
 // 1 image will cost $0,04(4 cents) => dall-e-3
 // 1 image will cost $0,02(2 cents) => dall-e-2
+
+
+// message structure
+/*
+@gpt message
+@dall-e message
+*/
